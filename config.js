@@ -3,6 +3,7 @@ var config = {
 	theme : 'default',
 	admin : 'admin',
 	secret : "1234567890QWERTY",
+
 	uri : 'mongodb://root:password@localhost:27017/cms',
 };
 
