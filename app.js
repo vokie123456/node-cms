@@ -1,7 +1,7 @@
 var config = require('./config'),
     express = require('express'),
     path = require('path'),
-   // favicon = require('static-favicon'),
+    favicon = require('static-favicon'),
    
     compress = require('compression')(),
     cookieParser = require('cookie-parser'),
@@ -10,7 +10,6 @@ var config = require('./config'),
     bodyParser = require('body-parser');
   
 var index = require('./routes/index');
-var users = require('./routes/users');
 var admin = require('./routes/admin');
 
 var app = express();
@@ -24,14 +23,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 app.use(cookieParser("abc"));
-app.use(session({ secret: config.secret, key: 'sid', cookie: { secure: true, maxAge : 6000000}}));
+app.use(session({ secret: config.secret, key: 'sid'}));
 
 
 
 app.use(express.static(path.join(__dirname, 'public/')));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/admin',admin);
 
 /// catch 404 and forwarding to error handler

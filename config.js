@@ -1,8 +1,9 @@
 var config = {
+	siteURL: 'localhost:3000',
 	theme : 'default',
 	admin : 'admin',
-	secret : "iamxz",
-	uri : 'mongodb://root:xuzhou89@localhost:27017/cms',
+	secret : "1234567890QWERTY",
+	uri : 'mongodb://root:password@localhost:27017/cms',
 };
 
 module.exports = config;
