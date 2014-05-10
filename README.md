@@ -42,7 +42,12 @@ node-cms
 
 已完成 用户登陆 验证
 
-正在完成 用户管理
+
+
+
+正在完成 文章添加
+
+
 
 打算做 :
 
@@ -69,4 +74,27 @@ node-cms
 欢迎贡献你 宝贵的代码。
 
 
+
+
+
 最后 捐款地址 [![Gittip](https://img.alipay.com/sys/personalprod/style/mc/btn-index.png)](http://me.alipay.com/xuzhoubuy)
+
+
+
+
+
+
+*****
+
+
+2014年5月11日 更新
+
+
+* 1， 已完成后台自定义导航
+
+* 2， 添加百度文本编辑器 
+
+* 3,  完成文本编辑器 图片上传功能
+
+
+*****
