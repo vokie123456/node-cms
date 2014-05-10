@@ -5,6 +5,7 @@ var config = require('./config'),
    
     compress = require('compression')(),
     cookieParser = require('cookie-parser'),
+    multer  = require('multer'),
     session      = require('express-session'),
     logger = require('morgan'),
     bodyParser = require('body-parser');
@@ -16,19 +17,17 @@ var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-//app.use(express.favicon());
+app.use(favicon());
 app.use(compress);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(multer({ dest: 'public/uploads/'}));
 
-app.use(cookieParser("abc"));
+app.use(cookieParser("iamxz"));
 app.use(session({ secret: config.secret, key: 'sid'}));
 
-
-
 app.use(express.static(path.join(__dirname, 'public/')));
-
 app.use('/', index);
 app.use('/admin',admin);
 

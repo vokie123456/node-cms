@@ -1,0 +1,66 @@
+<% include ../header %>
+  <% include ../left %>
+  <div id="main-content">
+      <div class="content-box">
+      <!-- Start Content Box -->
+      <div class="content-box-header">
+        <h3>添加·顶级导航</h3>
+        <div class="clear"></div>
+      </div>
+      <!-- End .content-box-header -->
+      <div class="content-box-content">
+      	    <form action="navadd" method="post">
+            <fieldset>
+            <p>
+              <label>分类名称 :</label>
+              <input class="text-input small-input" type="text" id="sort" name="sort" />
+            </p>                      
+           
+            <p>
+              <label>是否激活</label>
+              <input type="radio" name="active" value="1"/>
+              是
+              <input type="radio" name="active" value="0"/>
+              否</p>
+           
+            <div class="secondNav">
+               <h3>导航列表</h3>
+               
+               <a href="javascript:void(0)" class="button listadd">新增一列</a>
+               <p>
+                <label>名称 :</label>
+                <input class="text-input small-input" type="text"  name="list[0][name]" />
+             
+                <label>连接 :</label>
+                <input class="text-input small-input" type="text"  name="list[0][url]" />
+                <a href="javascript:void(0)" class="listdel">删除此列</a>
+              </p>
+
+              
+              
+
+            </div>
+            
+            <p>
+             <input class="button" type="submit" value=" 保 存 " />
+            </p>
+
+            </fieldset>
+            <div class="clear"></div>
+            <!-- End .clear -->
+          </form>      
+      </div>
+      <!-- End .content-box-content -->
+    </div>
+  
+    <!-- End .content-box -->
+    <div class="clear"></div>
+	
+  
+    <div id="footer"> <small>
+      <!-- Remove this notice or replace it with whatever you want -->
+      &#169; Copyright iamxz | Powered by <a href="http://iamxz.com">iamxz</a> | <a href="#">Top</a> </small> </div>
+    <!-- End #footer -->
+  </div>
+  <!-- End #main-content -->
+<% include ../footer %>

@@ -1,10 +1,18 @@
 {
-  "name": "iamxz",
+  "name": "node-cms",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xuzhou/node-cms"
+  },
+  "keywords": [
+    "nodecms",
+    "cms"
+  ],
   "dependencies": {
     "express": "^4.0.0",
     "static-favicon": "~1.0.0",
@@ -17,6 +25,9 @@
     "serve-static": "^1.1.0",
     "underscore": "^1.6.0",
     "mongoose": "^3.8.8",
-    "compression": "^1.0.1"
+    "compression": "^1.0.1",
+    "formidable": "^1.0.14",
+    "multer": "0.0.7",
+    "moment": "^2.6.0"
   }
 }

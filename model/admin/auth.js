@@ -3,9 +3,8 @@ var config = require('../../config'),
 	crypto = require('crypto'),
 	adminPath = config.admin;
 	mongoose.connect(config.uri);
-
 var adminSchema = new mongoose.Schema({
-    username     : String, 
+    username : String, 
   	password : String,
   	savePassword :Boolean,
   	name : String,
@@ -17,7 +16,6 @@ var adminSchema = new mongoose.Schema({
 });
 
 var adminModel = mongoose.model('admin',adminSchema);
-
 
 exports.auth = function(req, res,next){
 	if(req.session.username){
@@ -32,7 +30,8 @@ exports.auth = function(req, res,next){
 
 exports.index =function(req,res,next){
 	var index = {
-		username : req.session.username
+		username : req.session.username,
+		navs : req.session.nav
 	};
 	res.render(adminPath+'/index',index,function(err,html){
 		if(err) throw new Error(err);
@@ -46,8 +45,7 @@ exports.doLogin = function(req, res,next) {
 	var data = req.body;
 		data.password = crypto.createHash('md5').update(data.password, 'utf8').digest("hex");
 	adminModel.find(data,function(err,result){
-		if (err) return handleError(err);
-		console.log(result);
+		if (err) return handleError(err);		
 		if(result.length){		
 			req.session.username = data.username;
 			res.redirect('index');
@@ -102,7 +100,8 @@ exports.userUpdate = function(req, res,next) {
   res.render(adminPath+'/reg');
 }
 exports.userDelete = function(req, res,next) { 
-  res.render(adminPath+'/reg');
+  next();
+
 }
 
 

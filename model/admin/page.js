@@ -1,8 +1,7 @@
-var config = require('../config'),
-	mongoose = require('mongoose'),
-	crypto = require('crypto'),
-	adminPath = config.admin;
-	mongoose.connect(config.uri);
+var config = require('../../config'),
+    mongoose = require('mongoose'),
+    Schema   = mongoose.Schema,
+    adminPath = config.admin;
 
 var pageSchema = new mongoose.Schema({
 	id        :Number,
